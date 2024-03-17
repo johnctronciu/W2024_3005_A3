@@ -1,4 +1,3 @@
-import psycopg2
 from config import load_config
 from connect import connect
 
@@ -18,7 +17,7 @@ def getAllStudents():
     print("")
     connection.close()
 
-def addStudent(first_name: str, last_name: str, email: str, enrollment_date: str):
+def addStudent(first_name, last_name, email, enrollment_date):
     config = load_config()
     connection = connect(config)
     print("\nAdding a student")
@@ -32,7 +31,7 @@ def addStudent(first_name: str, last_name: str, email: str, enrollment_date: str
     print("New student successfully added with data:", first_name, last_name, email, enrollment_date)
     print("")
 
-def updateStudentEmail(student_id: int, new_email: str):
+def updateStudentEmail(student_id, new_email):
     config = load_config()
     connection = connect(config)
     print("\nUpdating student data:")
@@ -42,13 +41,26 @@ def updateStudentEmail(student_id: int, new_email: str):
             cur.execute("update Students set email=%s where student_id=%s;", (new_email, student_id))
             connection.commit()
 
-            print("Student email successdaully updated\n")
+            print("Student email successfully updated\n")
 
             connection.close()
     
+def deleteStudent(student_id):
+    config = load_config()
+    connection = connect(config)
+    print("\nDeleting student data:")
+    print("-----------------------------------------")
+    if (connection != None):
+        with connection.cursor() as cur:
+            cur.execute("delete from Students where student_id=%s;", (student_id))
+            connection.commit()
+
+            print("Student entry successfully deleted\n")
+
+            connection.close()
 
 if __name__ == '__main__':
     getAllStudents()
     #addStudent('Student D', 'Student D', 'D@email.com', '2002-02-22')
-    updateStudentEmail(3,'jim.beam@example.com')
+    deleteStudent('1')
     getAllStudents()
