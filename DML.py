@@ -62,5 +62,5 @@ def deleteStudent(student_id):
 if __name__ == '__main__':
     getAllStudents()
     #addStudent('Student D', 'Student D', 'D@email.com', '2002-02-22')
-    deleteStudent('1')
+    #updateStudentEmail('3', 'jim.beam@example.com')
     getAllStudents()
