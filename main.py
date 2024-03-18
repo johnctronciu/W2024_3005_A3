@@ -42,7 +42,7 @@ def actionLoop():
         else:
             print("Invalid action, please try again")
         
-        action = input("Action: ")
+        action = takeInput()
     
     print("Shutting down...")
 
