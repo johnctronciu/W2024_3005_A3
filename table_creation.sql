@@ -1,3 +1,5 @@
+drop table students;
+
 create table students (
 	student_id serial primary key,
 	first_name text not null,
