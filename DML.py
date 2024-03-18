@@ -14,6 +14,7 @@ def getAllStudents():
             print("-----------------------------------------")
             for row in rows:
                 print(row)
+                #print(row[0]) Can get IDs like this and put them in an array to check before deletion? But then will we iterate through the array each time? Or make it a global variable?
     print("")
     connection.close()
 
