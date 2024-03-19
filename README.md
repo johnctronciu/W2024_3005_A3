@@ -5,7 +5,7 @@
 3. Make a file named 'database.ini'
    1. Input information in the form of
    2. 
-        [postgresql]
+        [postgresql]\n
         host=localhost
         database=[YOUR DATABASE NAME]
         user=[YOUR USERNAME]
