@@ -11,3 +11,5 @@
         user=[YOUR USERNAME]
         password=[YOUR PASSWORD]
 4. Run main.py and follow instructions given in command line to operate script.
+
+Demo Link: <https://youtu.be/4BwE-7NY9L4>
